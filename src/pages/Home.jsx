@@ -1,5 +1,12 @@
 import React from "react";
+// components
 import Bestseller from "../components/Bestseller";
+import ExploreSlider from "../components/ExploreSlider";
+import OfferCard from "../components/OfferCard";
+import Button from "../components/Button";
+import TrendsSlider from "../components/TrendsSlider";
+
+// Media
 import festive from "../assets/festive.avif";
 import category1 from "../assets/category1.webp";
 import category2 from "../assets/category2.avif";
@@ -14,12 +21,16 @@ import offer1 from "../assets/offer1.webp";
 import offer2 from "../assets/offer2.webp";
 import offer3 from "../assets/offer3.webp";
 import offer4 from "../assets/offer4.webp";
+import offer5 from "../assets/offer5.webp";
+import offer6 from "../assets/offer6.webp";
+import offer7 from "../assets/offer7.webp";
+import lipsicon from "../assets/lips-icon.png";
+import powdericon from "../assets/powder-icon.png";
+import usericon from "../assets/user-icon.png";
 import heroImg from "../assets/hero-img-sm.png";
 import heroImgSm from "../assets/hero-img.png";
 import freegift from "../assets/freegift.png"; 
-import ExploreSlider from "../components/ExploreSlider";
-import OfferCard from "../components/OfferCard";
-import Button from "../components/Button";
+
 const categories = [
   { img: category1, title: "Festive Glow" },
   { img: category2, title: "Best Sellers" },
@@ -36,25 +47,52 @@ const offerCards = [
     img: offer1,
     code: 'Apply code "FESTIVEGLOW"',
     desc: "Shop any 3 products upto 379 at just ₹799",
+    btn: 'Explore'
   },
 
   {
     img: offer2,
     code: 'Apply code "WELCOME2MARS"',
     desc: "Flat 15% OFF on Your First Order",
+    btn: 'Explore'
   },
   {
     img: offer3,
     code: 'Apply code "FREEKAJAL"',
     desc: "Free Twist Up Kajal worth ₹229 on orders Above ₹549",
+    btn: 'Explore'
   },
 
   {
     img: offer4,
     code: 'Apply code "FREEMAKEUPKIT"',
     desc: "Free Makeup Kit worth ₹299 on orders Above ₹699",
+    btn: 'Explore'
+  },
+  {
+    img: offer5,
+    icon: powdericon,
+    code: 'Try the MARS Lipstick Shade Finder',
+    desc: "Confusing Lipstick shades?",
+    btn: 'Find your shade'
+  },
+  {
+    img: offer6,
+    icon: lipsicon,
+    code: 'looking for a base?',
+    desc: "Now, let’s get to the Base",
+    btn: 'Find your shade'
+  },
+  {
+    img: offer7,
+    icon: usericon,
+    code: 'Still confused?',
+    desc: "Contact our beauty advisor",
+    btn: 'Find your shade'
   },
 ];
+
+
 const Home = () => {
   return (
     <>
@@ -104,8 +142,8 @@ const Home = () => {
       <div className="px-10 mt-8 pb-10">
         <h2 className="section-heading mb-4">Curated Offers For You</h2>
         <div className="flex gap-4 overflow-x-auto flex-nowrap hide-scrollbar ">
-          {offerCards.map((item, idx) => (
-            <OfferCard key={idx} card={item}/>
+          {offerCards.slice(0, 4).map((item, idx) => (
+            <OfferCard key={idx} card={item} headindHeight="h-[4.5rem]" cardWidth="min-w-[19rem]"/>
           ))}
         </div>
       </div>
@@ -113,21 +151,41 @@ const Home = () => {
 {/* Free Gift Banner */}
       <div className="bg-[#f3f3f3] p-10 max-md:px-4">
         <div className=" rounded-3xl grid sm:grid-cols-2 bg-white p-8 gap-4">
-          <div className="">
-            <h2 className="font-semibold text-[clamp(2rem,4vw,3.5rem)] leading-[1.1]">Who doesn’t <br /> love a free gift?</h2>
+          <div className="max-md:ml-8">
+            <h2 className="font-semibold text-[clamp(2.4rem,4vw,3.5rem)] leading-[1.1]">Who doesn’t <br /> love a free gift?</h2>
             <p className=" my-6 !text-[clamp(1rem,2vw,1.25rem)]">Get a free 15 Color Eyeshadow Palette worth Rs.449 on purchase above Rs.999*</p>
             <p className="pb-4">Use Code: BIGBASHSALE</p>
 
             <Button text="Get yours now!"/>
           </div>
-          <div className="">
-            <img className="min-w-[15rem] " src={freegift} alt="" />
+          <div className="px-auto ">
+            <img className="min-w-[15rem] mx-auto" src={freegift} alt="" />
           </div>
         </div>
       </div>
 
 {/* own this look */}
 
+      <div className="bg-[#f1f1f1] px-8">
+        <div className="text-center pb-4">
+          <h3 className="text-2xl font-semibold">Own this look!</h3>
+          <p>Own the latest Trends</p>
+        </div>
+        <TrendsSlider />
+      </div>
+
+
+{/* Don’t worry, MARS’ got you! */}
+      <div className="w-full pt-8">
+        <h2 className="section-heading mb-4">Don’t worry, MARS’ got you!</h2>
+        <div className="flex gap-4 overflow-x-auto flex-nowrap hide-scrollbar px-auto max-md:px-4 mt-4 mb-10 md:px-10 lg:px-30">
+          {offerCards.slice(4, 7).map((item, idx) => (
+            <OfferCard key={idx} card={item} className="md:text-3xl" headindHeight="h-[4rem]" cardWidth="max-md:min-w-[16rem]"/>
+          ))}
+        </div>
+      </div>
+
+{/* join us */}
 
     </>
 
