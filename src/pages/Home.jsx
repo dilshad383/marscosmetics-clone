@@ -29,8 +29,8 @@ import powdericon from "../assets/powder-icon.png";
 import usericon from "../assets/user-icon.png";
 import heroImg from "../assets/hero-img-sm.png";
 import heroImgSm from "../assets/hero-img.png";
-import freegift from "../assets/freegift.png"; 
-
+import freegift from "../assets/freegift.png";
+import joinus from "../assets/joinus.png"
 const categories = [
   { img: category1, title: "Festive Glow" },
   { img: category2, title: "Best Sellers" },
@@ -47,51 +47,50 @@ const offerCards = [
     img: offer1,
     code: 'Apply code "FESTIVEGLOW"',
     desc: "Shop any 3 products upto 379 at just ₹799",
-    btn: 'Explore'
+    btn: "Explore",
   },
 
   {
     img: offer2,
     code: 'Apply code "WELCOME2MARS"',
     desc: "Flat 15% OFF on Your First Order",
-    btn: 'Explore'
+    btn: "Explore",
   },
   {
     img: offer3,
     code: 'Apply code "FREEKAJAL"',
     desc: "Free Twist Up Kajal worth ₹229 on orders Above ₹549",
-    btn: 'Explore'
+    btn: "Explore",
   },
 
   {
     img: offer4,
     code: 'Apply code "FREEMAKEUPKIT"',
     desc: "Free Makeup Kit worth ₹299 on orders Above ₹699",
-    btn: 'Explore'
+    btn: "Explore",
   },
   {
     img: offer5,
     icon: powdericon,
-    code: 'Try the MARS Lipstick Shade Finder',
+    code: "Try the MARS Lipstick Shade Finder",
     desc: "Confusing Lipstick shades?",
-    btn: 'Find your shade'
+    btn: "Find your shade",
   },
   {
     img: offer6,
     icon: lipsicon,
-    code: 'looking for a base?',
+    code: "looking for a base?",
     desc: "Now, let’s get to the Base",
-    btn: 'Find your shade'
+    btn: "Find your shade",
   },
   {
     img: offer7,
     icon: usericon,
-    code: 'Still confused?',
+    code: "Still confused?",
     desc: "Contact our beauty advisor",
-    btn: 'Find your shade'
+    btn: "Find your shade",
   },
 ];
-
 
 const Home = () => {
   return (
@@ -132,31 +131,41 @@ const Home = () => {
         </div>
       </div>
 
-{/* Explore Gifts & Combos */}
+      {/* Explore Gifts & Combos */}
       <div className="px-12 mt-6">
         <h2 className="section-heading mb-4">Explore Gifts & Combos</h2>
         <ExploreSlider />
       </div>
 
-{/* Curated Offers For You */}
+      {/* Curated Offers For You */}
       <div className="px-10 mt-8 pb-10">
         <h2 className="section-heading mb-4">Curated Offers For You</h2>
         <div className="flex gap-4 overflow-x-auto flex-nowrap hide-scrollbar ">
           {offerCards.slice(0, 4).map((item, idx) => (
-            <OfferCard key={idx} card={item} headindHeight="h-[4.5rem]" cardWidth="min-w-[19rem]"/>
+            <OfferCard
+              key={idx}
+              card={item}
+              headindHeight="h-[4.5rem]"
+              cardWidth="min-w-[19rem]"
+            />
           ))}
         </div>
       </div>
 
-{/* Free Gift Banner */}
+      {/* Free Gift Banner */}
       <div className="bg-[#f3f3f3] p-10 max-md:px-4">
         <div className=" rounded-3xl grid sm:grid-cols-2 bg-white p-8 gap-4">
           <div className="max-md:ml-8">
-            <h2 className="font-semibold text-[clamp(2.4rem,4vw,3.5rem)] leading-[1.1]">Who doesn’t <br /> love a free gift?</h2>
-            <p className=" my-6 !text-[clamp(1rem,2vw,1.25rem)]">Get a free 15 Color Eyeshadow Palette worth Rs.449 on purchase above Rs.999*</p>
+            <h2 className="font-semibold text-[clamp(2.4rem,4vw,3.5rem)] leading-[1.1]">
+              Who doesn’t <br /> love a free gift?
+            </h2>
+            <p className=" my-6 !text-[clamp(1rem,2vw,1.25rem)]">
+              Get a free 15 Color Eyeshadow Palette worth Rs.449 on purchase
+              above Rs.999*
+            </p>
             <p className="pb-4">Use Code: BIGBASHSALE</p>
 
-            <Button text="Get yours now!"/>
+            <Button text="Get yours now!" />
           </div>
           <div className="px-auto ">
             <img className="min-w-[15rem] mx-auto" src={freegift} alt="" />
@@ -164,7 +173,7 @@ const Home = () => {
         </div>
       </div>
 
-{/* own this look */}
+      {/* own this look */}
 
       <div className="bg-[#f1f1f1] px-8">
         <div className="text-center pb-4">
@@ -174,21 +183,59 @@ const Home = () => {
         <TrendsSlider />
       </div>
 
-
-{/* Don’t worry, MARS’ got you! */}
+      {/* Don’t worry, MARS’ got you! */}
       <div className="w-full pt-8">
         <h2 className="section-heading mb-4">Don’t worry, MARS’ got you!</h2>
         <div className="flex gap-4 overflow-x-auto flex-nowrap hide-scrollbar px-auto max-md:px-4 mt-4 mb-10 md:px-10 lg:px-30">
           {offerCards.slice(4, 7).map((item, idx) => (
-            <OfferCard key={idx} card={item} className="md:text-3xl" headindHeight="h-[4rem]" cardWidth="max-md:min-w-[16rem]"/>
+            <OfferCard
+              key={idx}
+              card={item}
+              className="md:text-3xl"
+              headindHeight="h-[4rem]"
+              cardWidth="max-md:min-w-[16rem]"
+            />
           ))}
         </div>
       </div>
 
-{/* join us */}
+      {/* join us */}
+      <div className="bg-[#f2f2f2] p-6">
+        <div className="rounded-2xl bg-white p-10 grid [@media(min-width:750px)]:grid-cols-2 gap-10 ">
+          <div className="max-sm:hidden">
+            <img src={joinus} alt="" />
+          </div>
+          <div className="">
+            <h2 className="text-[clamp(1.125rem,3vw+1rem,3.75rem)] text leading-[clamp(1.9rem,5vw,3.5rem)] mb-4 font-semibold">
+              Join the <br /> MARS Party!
+            </h2>
+            <p className="text-[clamp(18px,2vw+1rem,28px)]">
+              Subscribe to get discount of 15% on Your First Order.{" "}
+              <span className="font-bold">Exclusively for You.</span>
+            </p>
+            <div className="relative w-full my-4">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                className="peer w-full border border-black bg-transparent pt-6 text-white rounded-md focus:outline-none "
+                placeholder="Enter your email"
+              />
+              <label
+                htmlFor="email"
+                className="absolute left-4 top-1 text-gray-400 !text-lg transition-all peer-placeholder-shown:top-2.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-1 peer-focus:!text-sm "
+              >
+                Enter your email
+              </label>
+            </div>
+            <p>Sign up for fab updates from MARS Cosmetics. Standard rates apply. Read our Terms and Privacy.</p>
 
+            <Button text="Subscribe"/>
+          </div>
+        </div>
+      </div>
     </>
-
   );
 };
 

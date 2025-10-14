@@ -67,12 +67,29 @@ const Header = () => {
   return (
     <div className="">
       {/* marquee */}
-      <div className="overflow-hidden whitespace-nowrap bg-[#960001] text-white text-sm py-4">
+      <div className="overflow-hidden whitespace-nowrap bg-[#8a0a26] text-white text-sm py-3 relative">
+        {/* First Loop */}
         <div className="inline-block animate-marquee">
           <span className="mx-4">MARS Festive Glow Sale is Live Now!</span>
-          <span className="mx-4">Avail B3@799 and other exciting offers at checkout </span>
+          <span className="mx-4">
+            Avail B3@799 and other exciting offers at checkout
+          </span>
           <span className="mx-4">MARS Festive Glow Sale is Live Now!</span>
-          <span className="mx-4">Avail B3@799 and other exciting offers at checkout </span>
+          <span className="mx-4">
+            Avail B3@799 and other exciting offers at checkout
+          </span>
+        </div>
+
+        {/* Second Loop for seamless scroll */}
+        <div className="inline-block absolute top-0 animate-marquee2">
+          <span className="mx-4">MARS Festive Glow Sale is Live Now!</span>
+          <span className="mx-4">
+            Avail B3@799 and other exciting offers at checkout
+          </span>
+          <span className="mx-4">MARS Festive Glow Sale is Live Now!</span>
+          <span className="mx-4">
+            Avail B3@799 and other exciting offers at checkout
+          </span>
         </div>
       </div>
 
@@ -99,9 +116,10 @@ const Header = () => {
             <Link to="">Blog</Link>
             <Link to="">Support</Link>
           </div>
-          <CiSearch className="inline-block" />
-          <LuUser className="inline-block" />
-          <PiShoppingCartFill className="inline-block" />
+          <Link><CiSearch className="inline-block" /></Link>
+          <Link to="/signin"><LuUser className="inline-block" /></Link>
+          <Link><PiShoppingCartFill className="inline-block" /></Link>
+          
         </div>
       </div>
 

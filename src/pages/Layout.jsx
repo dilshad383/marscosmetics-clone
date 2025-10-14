@@ -1,16 +1,18 @@
 import React from "react";
-import { Outlet } from "react-router";
+import { Outlet, useLocation } from "react-router";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 const Layout = () => {
-return (
+  const location = useLocation();
+  const hideHeaderFooter = location.pathname === "/signin";
+  return (
     <div>
-    <Header />
-    <Outlet />
-    <Footer />
+      {!hideHeaderFooter && <Header />}
+      <Outlet />
+      {!hideHeaderFooter && <Footer />}
     </div>
-);
+  );
 };
 
 export default Layout;

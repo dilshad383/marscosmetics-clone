@@ -43,28 +43,59 @@ p {
 /* Marquee */
 @keyframes marquee {
   0% {
-    transform: translateX(100%);
+    transform: translateX(0);
   }
   100% {
     transform: translateX(-100%);
   }
 }
 
-.animate-marquee {
-  animation: marquee 30s linear infinite;
+@keyframes marquee2 {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+
+.animate-marquee2 {
+  animation: marquee2 40s linear infinite;
+}
 
 .card-shadow::before {
-    content: "";
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 150%;
-    padding: 100rem;
-    pointer-events: none;
-    border-radius: 0px 0px var(--cevoid-corner-roundness) var(--cevoid-corner-roundness);
-    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.294) 8.1%, rgba(0, 0, 0, 0.286) 15.5%, rgba(0, 0, 0, 0.27) 22.5%, rgba(0, 0, 0, 0.247) 29%, rgba(0, 0, 0, 0.224) 35.3%, rgba(0, 0, 0, 0.192) 41.2%, rgba(0, 0, 0, 0.165) 47.1%, rgba(0, 0, 0, 0.133) 52.9%, rgba(0, 0, 0, 0.106) 58.8%, rgba(0, 0, 0, 0.08) 64.7%, rgba(0, 0, 0, 0.055) 71%, rgba(0, 0, 0, 0.03) 77.5%, rgba(0, 0, 0, 0.016) 84.5%, rgba(0, 0, 0, 0.004) 91.9%, rgba(0, 0, 0, 0) 100%);
-    z-index: 2;
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  height: 150%;
+  padding: 100rem;
+  pointer-events: none;
+  border-radius: 0px 0px var(--cevoid-corner-roundness)
+    var(--cevoid-corner-roundness);
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.294) 8.1%,
+    rgba(0, 0, 0, 0.286) 15.5%,
+    rgba(0, 0, 0, 0.27) 22.5%,
+    rgba(0, 0, 0, 0.247) 29%,
+    rgba(0, 0, 0, 0.224) 35.3%,
+    rgba(0, 0, 0, 0.192) 41.2%,
+    rgba(0, 0, 0, 0.165) 47.1%,
+    rgba(0, 0, 0, 0.133) 52.9%,
+    rgba(0, 0, 0, 0.106) 58.8%,
+    rgba(0, 0, 0, 0.08) 64.7%,
+    rgba(0, 0, 0, 0.055) 71%,
+    rgba(0, 0, 0, 0.03) 77.5%,
+    rgba(0, 0, 0, 0.016) 84.5%,
+    rgba(0, 0, 0, 0.004) 91.9%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  z-index: 2;
 }
