@@ -112,7 +112,7 @@ const Header = () => {
         <div className="flex gap-4 text-sm">
           <div className="max-md:hidden flex gap-4">
             <Link to="">Store Locator</Link>
-            <Link to="">About Us</Link>
+            <Link to="/about">About Us</Link>
             <Link to="">Blog</Link>
             <Link to="">Support</Link>
           </div>
@@ -137,7 +137,7 @@ const Header = () => {
         <VscClose className="text-3xl cursor-pointer" onClick={closeSidebar} />
         <ul className="flex flex-col space-y-3 text-[13px] mt-10 list-none relative">
           <Link to="/festive-glow-sale">Festive Glow Sale</Link>
-          <Link to="/best-sellers">Best Sellers</Link>
+          <Link to="/bestsellers">Best Sellers</Link>
 
           {/* Main links with sub-sidebar */}
           {Object.keys(subSidebarData).map((key) => (
@@ -154,7 +154,7 @@ const Header = () => {
           <Link to="/blogs">Blogs</Link>
           <Link to="/find-your-shade">Find Your Shade</Link>
           <Link to="/store-locator">Store Locator</Link>
-          <Link to="/about-us">About Us</Link>
+          <Link to="/about">About Us</Link>
           <Link to="/support">Support</Link>
         </ul>
 

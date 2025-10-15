@@ -15,7 +15,7 @@ const SignIn = () => {
               <input
                 type="email"
                 placeholder="Email"
-                className="w-full rounded-md border border-gray-400 bg-transparent px-4 py-2 outline-none transition-all  duration-300 focus:border-[#9c1a36]"
+                className="w-full rounded-md border border-gray-400 bg-transparent px-4 py-2 outline-none transition-all  duration-300 focus:border-[#9c1a36] focus:border-2"
               />
             </div>
             <button className="rounded-md py-2 my-2 bg-[#9c1a36] text-white">Continue</button>
