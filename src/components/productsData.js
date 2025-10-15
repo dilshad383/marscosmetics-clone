@@ -55,14 +55,16 @@ const productsData = {
       images: [lips1a, lips1b],
       reviews: "47 reviews",
       price: "Rs. 499",
-      colors: ["#ff0000", "#f99"]
+      colors: ["#ff0000", "#f99"],
+      bestseller: 'Bestseller'
     },
     {
       name: "CineMagic Gloss",
       images: [lips2a, lips2b],
       reviews: "No reviews",
       price: "Rs. 399",
-      colors: ["#f66", "#faa"]
+      colors: ["#f66", "#faa"],
+      bestseller: 'Bestseller'
     },
     {
       name: "Velvet Touch",
@@ -83,7 +85,8 @@ const productsData = {
       images: [lips5a, lips5b],
       reviews: "68 reviews",
       price: "Rs. 480",
-      colors: ["#aa0000", "#dd4444"]
+      colors: ["#aa0000", "#dd4444"],
+      bestseller: 'Bestseller'
     },
     {
       name: "Lip Luxe",
@@ -97,7 +100,8 @@ const productsData = {
       images: [lips7a, lips7b],
       reviews: "39 reviews",
       price: "Rs. 430",
-      colors: ["#cc3333", "#ee6666"]
+      colors: ["#cc3333", "#ee6666"],
+      bestseller: 'Bestseller'
     },
     {
       name: "Perfect Pout",
@@ -114,21 +118,24 @@ const productsData = {
       images: [eyes1a, eyes1b],
       reviews: "47 reviews",
       price: "Rs. 470",
-      colors: ["#000000", "#222222"]
+      colors: ["#000000", "#222222"],
+      bestseller: 'Bestseller'
     },
     {
       name: "Smoky Nights Palette",
       images: [eyes2a, eyes2b],
       reviews: "No reviews",
       price: "Rs. 499",
-      colors: ["#444", "#888"]
+      colors: ["#444", "#888"],
+      bestseller: 'Bestseller'
     },
     {
       name: "Bold Kajal Stick",
       images: [eyes3a, eyes3b],
       reviews: "19 reviews",
       price: "Rs. 350",
-      colors: ["#111", "#555"]
+      colors: ["#111", "#555"],
+      bestseller: 'Bestseller'
     },
     {
       name: "Wing It Liner",
@@ -194,7 +201,8 @@ const productsData = {
       images: [face7a, face7b],
       reviews: "14 reviews",
       price: "Rs. 590",
-      colors: ["#b87d52", "#d49b6b"]
+      colors: ["#b87d52", "#d49b6b"],
+      bestseller: 'Bestseller'
     },
     {
       name: "Silky Setting Powder",

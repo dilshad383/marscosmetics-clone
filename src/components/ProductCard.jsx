@@ -8,7 +8,7 @@ const HoverImageCards = ({ product }) => {
   return (
     <>
       <div className="card">
-        <div className="border-4 border-[#960001] overflow-hidden bg-[#f8f7f3]">
+        <div className="overflow-hidden bg-[#f8f7f3]">
           <div className="relative group overflow-hidden cursor-pointer h-[18rem] flex items-center justify-center">
             <img src={product.images[0]} className="max-w-full max-h-full object-contain" alt="" />
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -22,8 +22,8 @@ const HoverImageCards = ({ product }) => {
               className="absolute z-10 top-2 right-2 w-[5rem]"
               src={festive} alt="" />
 
-            <div className="absolute top-0 left-0  uppercase text-xs bg-[#cd0053] text-white">
-              Bestseller
+            <div className="absolute top-0 left-0  uppercase !text-[8px] px-[4px]  font-semibold bg-[#cd0053] text-white">
+              {product.bestseller}
             </div>
           </div>
         </div>
