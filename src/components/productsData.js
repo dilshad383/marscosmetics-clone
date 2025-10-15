@@ -14,22 +14,18 @@ import lips7a from './images/lips7a.png';
 import lips7b from './images/lips7b.png';
 import lips8a from './images/lips8a.png';
 import lips8b from './images/lips8b.png';
+
 import eyes1a from './images/eyes1a.png';
 import eyes1b from './images/eyes1b.png';
 import eyes2a from './images/eyes2a.png';
 import eyes2b from './images/eyes2b.png';
 import eyes3a from './images/eyes3a.png';
 import eyes3b from './images/eyes3b.png';
-// import eyes4a from './images/eyes4a.png';
-// import eyes4b from './images/eyes4b.png';
-// import eyes5a from './images/eyes5a.png';
-// import eyes5b from './images/eyes5b.png';
-// import eyes6a from './images/eyes6a.png';
-// import eyes6b from './images/eyes6b.png';
 import eyes7a from './images/eyes7a.png';
 import eyes7b from './images/eyes7b.png';
 import eyes8a from './images/eyes8a.png';
 import eyes8b from './images/eyes8b.png';
+
 import face1a from './images/face1a.png';
 import face1b from './images/face1b.png';
 import face2a from './images/face2a.png';
@@ -47,7 +43,6 @@ import face7b from './images/face7b.png';
 import face8a from './images/face8a.png';
 import face8b from './images/face8b.png';
 
-
 const productsData = {
   Lips: [
     {
@@ -56,7 +51,7 @@ const productsData = {
       reviews: "47 reviews",
       price: "Rs. 499",
       colors: ["#ff0000", "#f99"],
-      bestseller: 'Bestseller'
+      tag: "Bestseller"
     },
     {
       name: "CineMagic Gloss",
@@ -64,7 +59,7 @@ const productsData = {
       reviews: "No reviews",
       price: "Rs. 399",
       colors: ["#f66", "#faa"],
-      bestseller: 'Bestseller'
+      tag: "New"
     },
     {
       name: "Velvet Touch",
@@ -86,14 +81,15 @@ const productsData = {
       reviews: "68 reviews",
       price: "Rs. 480",
       colors: ["#aa0000", "#dd4444"],
-      bestseller: 'Bestseller'
+      tag: "Bestseller"
     },
     {
       name: "Lip Luxe",
       images: [lips6a, lips6b],
       reviews: "No reviews",
       price: "Rs. 500",
-      colors: ["#ff4444", "#ff8888"]
+      colors: ["#ff4444", "#ff8888"],
+      tag: "New"
     },
     {
       name: "Soft Satin",
@@ -101,7 +97,7 @@ const productsData = {
       reviews: "39 reviews",
       price: "Rs. 430",
       colors: ["#cc3333", "#ee6666"],
-      bestseller: 'Bestseller'
+      tag: "Bestseller"
     },
     {
       name: "Perfect Pout",
@@ -119,7 +115,7 @@ const productsData = {
       reviews: "47 reviews",
       price: "Rs. 470",
       colors: ["#000000", "#222222"],
-      bestseller: 'Bestseller'
+      tag: "Bestseller"
     },
     {
       name: "Smoky Nights Palette",
@@ -127,7 +123,7 @@ const productsData = {
       reviews: "No reviews",
       price: "Rs. 499",
       colors: ["#444", "#888"],
-      bestseller: 'Bestseller'
+      tag: "Bestseller"
     },
     {
       name: "Bold Kajal Stick",
@@ -135,7 +131,7 @@ const productsData = {
       reviews: "19 reviews",
       price: "Rs. 350",
       colors: ["#111", "#555"],
-      bestseller: 'Bestseller'
+      tag: "New"
     },
     {
       name: "Wing It Liner",
@@ -149,7 +145,8 @@ const productsData = {
       images: [eyes8a, eyes8b],
       reviews: "No reviews",
       price: "Rs. 520",
-      colors: ["#bbaaff", "#ccbbff"]
+      colors: ["#bbaaff", "#ccbbff"],
+      tag: "New"
     }
   ],
 
@@ -166,7 +163,8 @@ const productsData = {
       images: [face2a, face2b],
       reviews: "No reviews",
       price: "Rs. 650",
-      colors: ["#f0c8a8", "#f6d5b5"]
+      colors: ["#f0c8a8", "#f6d5b5"],
+      tag: "New"
     },
     {
       name: "Glow Highlighter",
@@ -180,7 +178,8 @@ const productsData = {
       images: [face4a, face4b],
       reviews: "11 reviews",
       price: "Rs. 499",
-      colors: ["#ddd", "#eee"]
+      colors: ["#ddd", "#eee"],
+      tag: "Bestseller"
     },
     {
       name: "Natural Blush",
@@ -202,7 +201,7 @@ const productsData = {
       reviews: "14 reviews",
       price: "Rs. 590",
       colors: ["#b87d52", "#d49b6b"],
-      bestseller: 'Bestseller'
+      tag: "Bestseller"
     },
     {
       name: "Silky Setting Powder",
