@@ -7,7 +7,6 @@ import Button from "../components/Button";
 import TrendsSlider from "../components/TrendsSlider";
 
 // Media
-import festive from "../assets/festive.avif";
 import category1 from "../assets/category1.webp";
 import category2 from "../assets/category2.avif";
 import category3 from "../assets/category3.webp";
@@ -30,7 +29,7 @@ import usericon from "../assets/user-icon.png";
 import heroImg from "../assets/hero-img-sm.png";
 import heroImgSm from "../assets/hero-img.png";
 import freegift from "../assets/freegift.png";
-import joinus from "../assets/joinus.png"
+import joinus from "../assets/joinus.png";
 const categories = [
   { img: category1, title: "Festive Glow" },
   { img: category2, title: "Best Sellers" },
@@ -96,24 +95,22 @@ const Home = () => {
   return (
     <>
       <div className="categories relative flex px-8 py-8 items-center">
-        <div className="flex items-center mx-auto gap-4 relative z-10 text-white overflow-hidden">
-          <div className="relative z-10 ">
-            <img
-              className="flex-none w-40 min-w-[10rem] mr-4 object-contain"
-              src={festive}
-              alt=""
-            />
-          </div>
-          <div className="flex gap-4 overflow-x-auto flex-nowrap hide-scrollbar">
-            {categories.map((item, idx) => (
-              <div key={idx} className="text-xs flex-none text-center">
-                <div className="aspect-square rounded-full w-20 max-md:w-15 overflow-hidden mb-2">
-                  <img src={item.img} alt="" />
+        <div className="flex gap-4 overflow-x-auto flex-nowrap hide-scrollbar">
+          {categories.map((item, idx) => (
+            <div key={idx} className="text-xs flex-none text-center">
+              {/* outer wrapper provides gradient border */}
+              <div className="aspect-square rounded-full w-20 max-md:w-18 overflow-hidden mb-2 p-[2px]" style={{ background: 'linear-gradient(180deg,#f54b34,#cd0053)' }}>
+                <div className="bg-white rounded-full w-full h-full overflow-hidden flex items-center justify-center">
+                  <img
+                    src={item.img}
+                    alt=""
+                    className="w-full h-full object-cover rounded-full"
+                  />
                 </div>
-                <p>{item.title}</p>
               </div>
-            ))}
-          </div>
+              <p>{item.title}</p>
+            </div>
+          ))}
         </div>
       </div>
 
@@ -229,9 +226,12 @@ const Home = () => {
                 Enter your email
               </label>
             </div>
-            <p>Sign up for fab updates from MARS Cosmetics. Standard rates apply. Read our Terms and Privacy.</p>
+            <p>
+              Sign up for fab updates from MARS Cosmetics. Standard rates apply.
+              Read our Terms and Privacy.
+            </p>
 
-            <Button text="Subscribe"/>
+            <Button text="Subscribe" />
           </div>
         </div>
       </div>

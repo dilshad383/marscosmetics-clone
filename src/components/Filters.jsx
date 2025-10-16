@@ -1,20 +1,48 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { FiChevronDown } from "react-icons/fi";
 
 const Filters = () => {
-  const [openSection, setOpenSection] = useState(null);
+ const [openSection, setOpenSection] = useState(null);
+  const [minPrice, setMinPrice] = useState(0);
+  const [maxPrice, setMaxPrice] = useState(2499);
+  const lastValue = useRef(null);
 
   const toggleSection = (section) => {
     setOpenSection(openSection === section ? null : section);
   };
 
+  const handleRangeChange = (e) => {
+    const newValue = Number(e.target.value);
+
+    // First time user interacts → store baseline
+    if (lastValue.current === null) {
+      lastValue.current = newValue;
+      return;
+    }
+
+    // If moved right → adjusting maxPrice
+    if (newValue > lastValue.current) {
+      setMaxPrice(Math.max(newValue, minPrice));
+    }
+    // If moved left → adjusting minPrice
+    else if (newValue < lastValue.current) {
+      setMinPrice(Math.min(newValue, maxPrice));
+    }
+
+    lastValue.current = newValue;
+  };
+
+  const handleMouseUp = () => {
+    lastValue.current = null; // reset after drag
+  };
+
   return (
     <div className="w-full max-w-xs bg-white">
       {/* Availability */}
-      <div className="border-b">
+      <div className="border-b border-gray-400">
         <button
           onClick={() => toggleSection("availability")}
-          className="w-full flex justify-between items-center px-4 py-3 text-sm font-medium hover:bg-gray-50"
+          className="w-full flex justify-between items-center px-2 py-3 text-sm font-medium hover:bg-gray-50"
         >
           Availability
           <FiChevronDown
@@ -44,11 +72,11 @@ const Filters = () => {
         )}
       </div>
 
-      {/* Price */}
-      <div className="border-b">
+            {/* Price Section */}
+      <div className="border-b border-gray-400">
         <button
           onClick={() => toggleSection("price")}
-          className="w-full flex justify-between items-center px-4 py-3 text-sm font-medium hover:bg-gray-50"
+          className="w-full flex justify-between items-center px-2 py-3 text-sm font-medium hover:bg-gray-50"
         >
           Price
           <FiChevronDown
@@ -60,18 +88,33 @@ const Filters = () => {
 
         {openSection === "price" && (
           <div className="px-5 pb-3 text-sm space-y-3">
-            <input
-              type="range"
-              min="0"
-              max="2499"
-              className="w-full accent-black"
-            />
+            {/* One slider controlling both sides */}
+            <div className="relative h-6 flex items-center">
+              <div className="absolute h-1 w-full bg-gray-300 rounded" />
+              <div
+                className="absolute h-1 bg-black rounded"
+                style={{
+                  left: `${(minPrice / 2499) * 100}%`,
+                  right: `${100 - (maxPrice / 2499) * 100}%`,
+                }}
+              />
+              <input
+                type="range"
+                min="0"
+                max="2499"
+                step="10"
+                onChange={handleRangeChange}
+                onMouseUp={handleMouseUp}
+                className="absolute w-full accent-black"
+              />
+            </div>
+
             <div className="flex justify-between items-center gap-3">
               <div>
                 <label className="block text-xs text-gray-500">From</label>
                 <input
                   type="text"
-                  value="₹0"
+                  value={`₹${minPrice}`}
                   readOnly
                   className="border rounded px-2 py-1 text-sm w-20"
                 />
@@ -80,7 +123,7 @@ const Filters = () => {
                 <label className="block text-xs text-gray-500">To</label>
                 <input
                   type="text"
-                  value="₹2499"
+                  value={`₹${maxPrice}`}
                   readOnly
                   className="border rounded px-2 py-1 text-sm w-20"
                 />
@@ -91,10 +134,10 @@ const Filters = () => {
       </div>
 
       {/* Color */}
-      <div className="border-b">
+      <div className="border-b border-gray-400">
         <button
           onClick={() => toggleSection("color")}
-          className="w-full flex justify-between items-center px-4 py-3 text-sm font-medium hover:bg-gray-50"
+          className="w-full flex justify-between items-center px-2 py-3 text-sm font-medium hover:bg-gray-50"
         >
           Color
           <FiChevronDown
@@ -123,7 +166,7 @@ const Filters = () => {
       <div>
         <button
           onClick={() => toggleSection("productType")}
-          className="w-full flex justify-between items-center px-4 py-3 text-sm font-medium hover:bg-gray-50"
+          className="w-full flex justify-between items-center px-2 py-3 text-sm font-medium hover:bg-gray-50"
         >
           Product Type
           <FiChevronDown

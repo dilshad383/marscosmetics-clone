@@ -49,12 +49,12 @@ const BestSellers = () => {
 
   return (
     <>
-      <div className="grid md:grid-cols-4">
-        <div className="col-span-1 h-screen">
+      <div className="grid md:grid-cols-5 ">
+        <div className="col-span-1 h-screen pt-12 pl-8 max-md:hidden">
           <h2 className="text-2xl">Filter by</h2>
           <Filters/>
         </div>
-        <div className="col-span-3 max-md:hidden">
+        <div className="col-span-4 ">
           {/* Tabs Navigation */}
           <ul className="flex flex-nowrap gap-2 pt-3 justify-center">
             {tabs.map((tab) => (

@@ -12,9 +12,7 @@ import { LuUser } from "react-icons/lu";
 import { CiSearch } from "react-icons/ci";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { VscClose } from "react-icons/vsc";
-import festive from "../assets/festive.avif";
 import { Link } from "react-router";
-import sidebarImg from "../assets/sidebar-bg.png";
 import subSidebarData from "./subSidebarData";
 const Header = () => {
   // sidebar states
@@ -101,7 +99,7 @@ const Header = () => {
             className="text-xl cursor-pointer lg:hidden"
             onClick={toggleSidebar}
           />
-          <img src={logo} alt="Logo" />
+          <Link to="/"><img src={logo} alt="Logo" /></Link>    
           <div className="flex items-center max-md:hidden gap-2">
             <span className="text-sm">Categories</span>
             <HiMiniChevronDown />
@@ -126,13 +124,9 @@ const Header = () => {
       {/* Sidebar */}
       <div
         ref={sidebarRef}
-        className={`fixed top-0 left-0 h-full w-[19rem] z-[100] text-white backdrop-blur-md transition-transform duration-300 pt-10 px-6 ${
+        className={`fixed top-0 left-0 h-full w-[19rem] z-[100] text-white bg-black transition-transform duration-300 pt-10 px-6  ${
           openSidebar ? "translate-x-0" : "-translate-x-full"
         }`}
-        style={{
-          backgroundImage: `url(${sidebarImg})`,
-          backgroundSize: "cover",
-        }}
       >
         <VscClose className="text-3xl cursor-pointer" onClick={closeSidebar} />
         <ul className="flex flex-col space-y-3 text-[13px] mt-10 list-none relative">
@@ -158,9 +152,6 @@ const Header = () => {
           <Link to="/support">Support</Link>
         </ul>
 
-        <div className="absolute bottom-0 left-0 w-full">
-          <img className="w-[70%] mx-auto" src={festive} alt="" />
-        </div>
 
         {/* Sub-sidebar (positioned relative to the Sidebar) */}
         {selectedSubSidebar && (

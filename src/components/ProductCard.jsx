@@ -1,7 +1,6 @@
 import React from "react";
 import { CiStar } from "react-icons/ci";
 import { FaStar } from "react-icons/fa";
-import festive from "../assets/festive.avif";
 import Button from "./Button";
 const HoverImageCards = ({ product }) => {
   const hasReviews = product.reviews && product.reviews !== "No reviews";
@@ -18,9 +17,6 @@ const HoverImageCards = ({ product }) => {
                 alt=""
               />
             </div>
-            <img 
-              className="absolute z-10 top-2 right-2 w-[5rem]"
-              src={festive} alt="" />
 
             <div className="absolute top-0 left-0  uppercase !text-[8px] px-[4px]  font-semibold bg-[#cd0053] text-white">
               {product.bestseller}
