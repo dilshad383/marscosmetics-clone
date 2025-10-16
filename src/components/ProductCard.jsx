@@ -5,6 +5,9 @@ import { FaStar } from "react-icons/fa";
 import Button from "./Button";
 const HoverImageCards = ({ product }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedColor, setSelectedColor] = useState(null);
+  const [mainImage, setMainImage] = useState(product.images[0]);
+
   const hasReviews = product.reviews && product.reviews !== "No reviews";
   return (
     <>
@@ -58,19 +61,88 @@ const HoverImageCards = ({ product }) => {
 
         {isModalOpen &&
           ReactDOM.createPortal(
-            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
-              <div className="bg-white rounded-xl p-6 w-[90%] max-w-md shadow-lg relative">
+            <div
+              className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/50 backdrop-blur-sm"
+              onClick={() => setIsModalOpen(false)}
+            >
+              <div
+                className="bg-white rounded-xl p-6 w-[90%] max-w-md shadow-2xl relative"
+                onClick={(e) => e.stopPropagation()}
+              >
                 <button
-                  className="absolute top-2 right-3 text-gray-500 text-xl"
+                  className="absolute top-2 right-3 text-gray-500 text-2xl font-bold"
                   onClick={() => setIsModalOpen(false)}
                 >
                   &times;
                 </button>
-                <h2 className="text-lg font-semibold mb-4">Select Shades</h2>
-                {/* your shade options go here */}
+
+                <h2 className="text-lg font-semibold mb-4 text-center text-[#061C2F]">
+                  Select Shades
+                </h2>
+
+                {/* 🖼️ Main Product Image */}
+                <img
+                  src={mainImage}
+                  alt={product.name}
+                  className="w-full h-64 object-contain mb-4 rounded-lg"
+                />
+
+                {/* 🔍 Thumbnails (click to change main image) */}
+                <div className="flex gap-2 overflow-x-auto mb-4 justify-center">
+                  {product.images.map((img, index) => (
+                    <img
+                      key={index}
+                      src={img}
+                      alt=""
+                      onClick={() => setMainImage(img)}
+                      className={`w-16 h-16 object-contain border-2 rounded-md cursor-pointer transition-all ${
+                        mainImage === img
+                          ? "border-[#CD0053]"
+                          : "border-transparent"
+                      }`}
+                    />
+                  ))}
+                </div>
+
+                {/* 🎨 Color Options */}
+                <div className="flex flex-wrap gap-2 justify-center mb-4">
+                  {product.colors.map((color, idx) => (
+                    <div
+                      key={idx}
+                      style={{
+                        backgroundColor: color,
+                        border:
+                          selectedColor === color
+                            ? "2px solid #CD0053"
+                            : "1px solid #d1d5db",
+                      }}
+                      className="w-8 h-8 rounded-full cursor-pointer hover:scale-110 transition-transform"
+                      onClick={() => {
+                        setSelectedColor(color);
+                        // Optional: Change main image based on color index if exists
+                        if (product.images[idx]) {
+                          setMainImage(product.images[idx]);
+                        }
+                      }}
+                    />
+                  ))}
+                </div>
+
+                {/* 🛒 Add to Cart Button */}
+                <Button
+                  text="Add to Cart"
+                  className="w-full mt-4"
+                  onClick={() =>
+                    console.log(
+                      `Added ${product.name} with shade ${
+                        selectedColor || "default"
+                      }`
+                    )
+                  }
+                />
               </div>
             </div>,
-            document.body // 👈 attaches modal to <body>
+            document.body
           )}
       </div>
     </>
