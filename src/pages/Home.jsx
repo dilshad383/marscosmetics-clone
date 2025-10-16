@@ -26,10 +26,9 @@ import offer7 from "../assets/offer7.webp";
 import lipsicon from "../assets/lips-icon.png";
 import powdericon from "../assets/powder-icon.png";
 import usericon from "../assets/user-icon.png";
-import heroImg from "../assets/hero-img-sm.png";
-import heroImgSm from "../assets/hero-img.png";
 import freegift from "../assets/freegift.png";
 import joinus from "../assets/joinus.png";
+import MainSlider from "../components/MainSlider";
 const categories = [
   { img: category1, title: "Festive Glow" },
   { img: category2, title: "Best Sellers" },
@@ -115,10 +114,7 @@ const Home = () => {
       </div>
 
       <div className="cursor-pointer">
-        <picture>
-          <source media="(min-width: 600px)" srcSet={heroImgSm} />
-          <img src={heroImg} alt="" />
-        </picture>
+        <MainSlider/>
       </div>
       {/* Best Sellers */}
       <div className="w-full px-4 md:px-8 mt-6">
