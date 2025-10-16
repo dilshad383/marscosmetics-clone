@@ -43,11 +43,19 @@ const About = () => {
         <SlickSlider />
 
         <div className="px-[clamp(48px,8vw,248px)]">
-          <p className="!text-[clamp(16px,1.5vw+0.4rem,18px)] py-8">At MARS Cosmetics, we believe beauty is for everyone. From our humble beginnings to becoming India’s most loved makeup brand, our journey has always been about empowering you. We create high-quality, accessible products that let you express your unique self with confidence and creativity. Together, we’re redefining beauty standards — celebrating individuality in every shade, every style, and every story.</p>
+          <p className="!text-[clamp(16px,1.5vw+0.4rem,18px)] py-8">
+            At MARS Cosmetics, we believe beauty is for everyone. From our
+            humble beginnings to becoming India’s most loved makeup brand, our
+            journey has always been about empowering you. We create
+            high-quality, accessible products that let you express your unique
+            self with confidence and creativity. Together, we’re redefining
+            beauty standards — celebrating individuality in every shade, every
+            style, and every story.
+          </p>
         </div>
       </div>
 
-      <div className="bg-[#a52337] text-white grid sm:grid-cols-2 md:grid-cols-4 px-[clamp(24px,6vw,80px)] py-[clamp(20px,5vw,63px)]">
+      <div className="bg-[#a52337] text-white grid max-sm:grid-cols-2 md:grid-cols-4 px-[clamp(24px,6vw,80px)] py-[clamp(20px,5vw,63px)] gap-4">
         {stats.map((item, idx) => (
           <div key={idx} className="text-center">
             <h3 className="text-[clamp(24px,2vw+1rem,40px)] font-semibold">
@@ -84,7 +92,10 @@ const About = () => {
 
         <div className="hide-scrollbar overflow-x-auto flex gap-4 flex-nowrap md:justify-center">
           {cards.map((card, idx) => (
-            <div key={idx} className="rounded-2xl my-2 p-4 bg-[#f3e6cf] text-black shrink-0 max-w-[16rem]">
+            <div
+              key={idx}
+              className="rounded-2xl my-2 p-4 bg-[#f3e6cf] text-black shrink-0 max-w-[16rem]"
+            >
               <h6 className="text-2xl font-semibold">{card.title}</h6>
               <p>{card.text}</p>
             </div>
@@ -92,9 +103,9 @@ const About = () => {
         </div>
       </div>
       <div className="bg-[#f3e6cf] flex justify-between px-10 py-8 md:py-16 md:justify-center md:gap-10 ">
-        {[abouticon1,abouticon2,abouticon3,abouticon4].map((item)=>(
+        {[abouticon1, abouticon2, abouticon3, abouticon4].map((item) => (
           <img className="max-w-25 md:max-w-35 block" src={item} alt="" />
-        ))}     
+        ))}
       </div>
     </>
   );

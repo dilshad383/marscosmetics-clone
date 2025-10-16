@@ -93,12 +93,12 @@ const offerCards = [
 const Home = () => {
   return (
     <>
-      <div className="categories relative flex px-8 py-8 items-center">
-        <div className="flex gap-4 overflow-x-auto flex-nowrap hide-scrollbar justify-center mx-auto">
+      <div className="categories relative flex py-2 items-center">
+        <div className="flex gap-8 max-sm:gap-4 overflow-x-auto flex-nowrap hide-scrollbar mx-auto max-sm:mx-4">
           {categories.map((item, idx) => (
             <div key={idx} className="text-xs flex-none text-center">
               {/* outer wrapper provides gradient border */}
-              <div className="aspect-square rounded-full w-20 max-md:w-18 overflow-hidden mb-2 p-[2px]" style={{ background: 'linear-gradient(180deg,#f54b34,#cd0053)' }}>
+              <div className="aspect-square rounded-full w-22 overflow-hidden p-[2px]" style={{ background: 'linear-gradient(180deg,#f54b34,#cd0053)' }}>
                 <div className="bg-white rounded-full w-full h-full overflow-hidden flex items-center justify-center">
                   <img
                     src={item.img}
