@@ -95,7 +95,7 @@ const Home = () => {
   return (
     <>
       <div className="categories relative flex px-8 py-8 items-center">
-        <div className="flex gap-4 overflow-x-auto flex-nowrap hide-scrollbar">
+        <div className="flex gap-4 overflow-x-auto flex-nowrap hide-scrollbar justify-center mx-auto">
           {categories.map((item, idx) => (
             <div key={idx} className="text-xs flex-none text-center">
               {/* outer wrapper provides gradient border */}
