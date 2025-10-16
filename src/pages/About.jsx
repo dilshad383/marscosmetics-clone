@@ -102,9 +102,9 @@ const About = () => {
           ))}
         </div>
       </div>
-      <div className="bg-[#f3e6cf] flex justify-between px-10 py-8 md:py-16 md:justify-center md:gap-10 ">
+      <div className="bg-[#f3e6cf] flex justify-between px-10 py-8 md:py-16 md:justify-center md:gap-10 gap-2">
         {[abouticon1, abouticon2, abouticon3, abouticon4].map((item) => (
-          <img className="max-w-25 md:max-w-35 block" src={item} alt="" />
+          <img className="max-w-20 md:max-w-35 block" src={item} alt="" />
         ))}
       </div>
     </>
