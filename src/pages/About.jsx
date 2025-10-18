@@ -42,8 +42,8 @@ const About = () => {
         </p>
         <SlickSlider />
 
-        <div className="px-[clamp(48px,8vw,248px)]">
-          <p className="!text-[clamp(16px,1.5vw+0.4rem,18px)] py-8">
+        <div className="px-[clamp(12px,8vw,248px)]">
+          <p className="!text-[clamp(16px,1.5vw+0.4rem,18px)] py-8 max-md:py-3">
             At MARS Cosmetics, we believe beauty is for everyone. From our
             humble beginnings to becoming India’s most loved makeup brand, our
             journey has always been about empowering you. We create
@@ -58,7 +58,7 @@ const About = () => {
       <div className="bg-[#a52337] text-white grid max-sm:grid-cols-2 md:grid-cols-4 px-[clamp(24px,6vw,80px)] py-[clamp(20px,5vw,63px)] gap-4">
         {stats.map((item, idx) => (
           <div key={idx} className="text-center">
-            <h3 className="text-[clamp(24px,2vw+1rem,40px)] font-semibold">
+            <h3 className="text-[clamp(18px,2vw+1rem,40px)] font-semibold">
               {item.title}
             </h3>
             <p className="!text-[clamp(16px,1.2vw+0.5rem,28px)]">{item.text}</p>
@@ -69,7 +69,7 @@ const About = () => {
       <div className="bg-black text-white">
         <img src={aboutimg} alt="" />
 
-        <div className="">
+        <div className="py-4 px-2">
           <p>Our Brand Statement</p>
           <h4 className="text-2xl font-semibold">Makeup for Everyone</h4>
           <p>
@@ -102,9 +102,9 @@ const About = () => {
           ))}
         </div>
       </div>
-      <div className="bg-[#f3e6cf] flex justify-between px-10 py-8 md:py-16 md:justify-center md:gap-10 gap-2">
+      <div className="bg-[#f3e6cf] flex justify-between px-10 py-8 md:py-16 md:justify-center md:gap-10 gap-2 overflow-x-auto hide-scrollbar">
         {[abouticon1, abouticon2, abouticon3, abouticon4].map((item) => (
-          <img className="max-w-20 md:max-w-35 block" src={item} alt="" />
+          <img className="max-w-20  md:max-w-35 block" src={item} alt="" />
         ))}
       </div>
     </>

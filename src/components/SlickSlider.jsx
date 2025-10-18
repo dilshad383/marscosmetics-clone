@@ -13,8 +13,8 @@ const SlickSlider = () => {
   const sliderRef = useRef(null);
   const containerRef = useRef(null);
   const observerRef = useRef(null);
-  const autoplayTime = 12000;
-  const [isClient, setIsClient] = useState(false);
+  const autoplayTime = 12000; 
+  const [isClient, setIsClient] = useState(false); 
 
   const slides = [slide1, slide2, slide3, slide4, slide5, slide6];
 
@@ -28,8 +28,7 @@ const SlickSlider = () => {
 
   // initialize responsive values synchronously on first render (uses window if available)
   const [responsiveVals, setResponsiveVals] = useState(() => {
-    if (typeof window !== "undefined")
-      return getResponsiveForWidth(window.innerWidth);
+    if (typeof window !== "undefined") return getResponsiveForWidth(window.innerWidth);
     return { slidesToShow: 4, centerPadding: "40px" };
   });
 
@@ -89,10 +88,10 @@ const SlickSlider = () => {
     pauseOnFocus: false,
     speed: 9000,
     cssEase: "linear",
-    slidesToShow: responsiveVals.slidesToShow,
+  slidesToShow: responsiveVals.slidesToShow,
     slidesToScroll: 1,
     centerMode: true,
-    centerPadding: responsiveVals.centerPadding,
+  centerPadding: responsiveVals.centerPadding, 
     responsive: [
       {
         breakpoint: 1024,
@@ -111,7 +110,7 @@ const SlickSlider = () => {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1, // 1 full + half visible
+          slidesToShow: 1.5, // 1 full + half visible
           centerPadding: "5px",
         },
       },
@@ -154,6 +153,7 @@ const SlickSlider = () => {
   useEffect(() => {
     if (!isClient) return;
 
+
     const refresh = () => {
       const slick = sliderRef.current?.innerSlider;
       try {
@@ -162,20 +162,16 @@ const SlickSlider = () => {
         void err;
       }
       try {
-        sliderRef.current?.slickSetOption?.(
-          "responsive",
-          settings.responsive,
-          true
-        );
+        sliderRef.current?.slickSetOption?.("responsive", settings.responsive, true);
       } catch (err) {
         void err;
       }
       window.dispatchEvent(new Event("resize"));
     };
 
-    // initial refresh after a longer delay, plus a second refresh in case layout shifts
-    const initTimer = setTimeout(() => refresh(), 500);
-    const secondTimer = setTimeout(() => refresh(), 1000);
+  // initial refresh after a longer delay, plus a second refresh in case layout shifts
+  const initTimer = setTimeout(() => refresh(), 500);
+  const secondTimer = setTimeout(() => refresh(), 1000);
 
     let ro;
     const node = containerRef.current;
@@ -191,7 +187,8 @@ const SlickSlider = () => {
       clearTimeout(secondTimer);
       if (ro) ro.disconnect();
     };
-
+    // settings.responsive is static; ignore exhaustive-deps for this effect
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isClient]);
 
   return (
@@ -199,11 +196,11 @@ const SlickSlider = () => {
       {isClient && (
         <Slider ref={sliderRef} {...settings}>
           {slides.map((img, idx) => (
-            <div key={idx} className="relative px-2">
+            <div key={idx} className="relative px-2 ">
               <img
                 src={img}
                 alt={`slide-${idx}`}
-                className="h-[180px]  sm:h-[200px] sm:w-[300px] md:h-[230px] md:w-[346px] object-cover rounded-xl w-full"
+                className="h-[180px] sm:h-[200px] sm:w-[300px] md:h-[230px] md:w-[346px] object-cover rounded-xl w-full "
               />
             </div>
           ))}

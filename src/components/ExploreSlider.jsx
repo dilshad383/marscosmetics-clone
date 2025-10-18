@@ -38,10 +38,10 @@ const ExploreSlider = () => {
           spaceBetween={16}
           centeredSlides={false}
           onSwiper={(swiper) => (swiperRef.current = swiper)}
-          className="mySwiper"
+          className="mySwiper "
         >
           {slides.map((slide, idx) => (
-            <SwiperSlide key={idx} className="!w-[85%]">
+            <SwiperSlide key={idx} className="!w-[85%] ">
               <div className="rounded-md">
                 <div className="rounded-md overflow-hidden">
                   <img src={slide.img} alt="" />
