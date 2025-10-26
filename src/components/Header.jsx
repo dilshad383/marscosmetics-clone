@@ -92,7 +92,7 @@ const Header = () => {
       </div>
 
       {/* Header Bar */}
-      <div className="bg-black text-white py-4 px-12 flex justify-between items-center">
+      <div className="bg-black text-white py-4 px-12 max-md:px-4 flex justify-between items-center">
         {/* Left Section */}
         <div className="flex items-center gap-4">
           <RxHamburgerMenu
@@ -115,7 +115,7 @@ const Header = () => {
             <Link to="">Support</Link>
           </div>
           <Link><CiSearch className="inline-block" /></Link>
-          <Link to="/signin"><LuUser className="inline-block" /></Link>
+          <Link to="/signin" className="max-sm:hidden"><LuUser className="inline-block" /></Link>
           <Link><PiShoppingCartFill className="inline-block" /></Link>
           
         </div>

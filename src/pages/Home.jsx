@@ -93,7 +93,7 @@ const offerCards = [
 const Home = () => {
   return (
     <>
-      <div className="categories relative flex px-8 py-8 items-center">
+      <div className="categories relative flex sm:px-8 py-8 items-center">
         <div className="flex gap-4 overflow-x-auto flex-nowrap hide-scrollbar justify-center mx-auto">
           {categories.map((item, idx) => (
             <div key={idx} className="text-xs flex-none text-center">
@@ -117,7 +117,7 @@ const Home = () => {
         <MainSlider/>
       </div>
       {/* Best Sellers */}
-      <div className="w-full px-4 md:px-8 mt-6">
+      <div className="w-full md:px-8 mt-6">
         <h2 className="section-heading">Best Sellers</h2>
         <div className=" w-full">
           <Bestseller />
@@ -125,13 +125,13 @@ const Home = () => {
       </div>
 
       {/* Explore Gifts & Combos */}
-      <div className="px-12 mt-6">
+      <div className="px-12 max-md:px-2 mt-6">
         <h2 className="section-heading mb-4">Explore Gifts & Combos</h2>
         <ExploreSlider />
       </div>
 
       {/* Curated Offers For You */}
-      <div className="px-10 mt-8 pb-10">
+      <div className="px-10 max-md:px-2 mt-8 pb-10">
         <h2 className="section-heading mb-4">Curated Offers For You</h2>
         <div className="flex gap-4 overflow-x-auto flex-nowrap hide-scrollbar ">
           {offerCards.slice(0, 4).map((item, idx) => (
@@ -147,12 +147,14 @@ const Home = () => {
 
       {/* Free Gift Banner */}
       <div className="bg-[#f3f3f3] p-10 max-md:px-4">
-        <div className=" rounded-3xl grid sm:grid-cols-2 bg-white p-8 gap-4">
-          <div className="max-md:ml-8">
-            <h2 className="font-semibold text-[clamp(2.4rem,4vw,3.5rem)] leading-[1.1]">
+        <div className=" rounded-3xl grid sm:grid-cols-2 bg-white py-6  px-2 gap-4">
+          <div className="px-6 md:pt-6 max-md:px-2">
+            <h2 className="font-semibold max-md:px-2 max-[320px]:text-[1.8rem]
+          max-[290px]:text-[1.5rem] text-[clamp(2.4rem,4vw,3.5rem)] leading-[1.1]">
               Who doesn’t <br /> love a free gift?
             </h2>
-            <p className=" my-6 !text-[clamp(1rem,2vw,1.25rem)]">
+            <p className="my-6 !text-[clamp(1rem,2vw,1.25rem)] max-[320px]:!text-[0.9rem]
+          max-[290px]:!text-[0.8rem]">
               Get a free 15 Color Eyeshadow Palette worth Rs.449 on purchase
               above Rs.999*
             </p>
